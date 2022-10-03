@@ -14,7 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectPoolData: []
   _componentPoolData: []
-  _behaviorPoolData:
-  - _poolCount: 1
-    _behavior: {fileID: 217920749077004213, guid: 334ad450762efa54dae4af920db62f55, type: 3}
+  _behaviorPoolData: []
   _classPoolData: []

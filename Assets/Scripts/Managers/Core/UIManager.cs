@@ -27,7 +27,7 @@ namespace Managers.Core
 
         private void Startup(IServiceProvider serviceProvider)
         {
-            _screen.ShowScreen(MainHud.SCREEN_NAME, ECanvasType.MainCanvas, EPreviosScreenAct.Close);
+            _screen.ShowScreen(WelcomeScreen.SCREEN_NAME, ECanvasType.MainCanvas, EPreviosScreenAct.Close);
         }
 
         public void OnCanvasCameraChange(Camera newCamera)

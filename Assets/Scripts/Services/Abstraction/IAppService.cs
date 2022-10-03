@@ -1,9 +1,8 @@
 
-
 namespace Services.Abstraction
 {
     public interface IAppService
     {
-        string ServerURL { get; }
+        int Score { set; get; }
     }
 }

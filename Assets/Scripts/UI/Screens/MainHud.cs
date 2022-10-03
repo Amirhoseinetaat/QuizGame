@@ -26,14 +26,14 @@ namespace UI.Screens
         {
             base.Initialization();
             _settingButton.onClick.AddListener(OnSettingButtonClick);
-            IPlayerInventory playerInventory = ServiceProvider.GetService<IPlayerInventory>();
-            _coinCountLable.text = playerInventory.CoinCount.ToString();
+            //IPlayerInventory playerInventory = ServiceProvider.GetService<IPlayerInventory>();
+            //_coinCountLable.text = playerInventory.CoinCount.ToString();
         }
 
         private void OnSettingButtonClick()
         {
-            SettingScreen screen = ScreenHandler.ShowScreen<SettingScreen>(SettingScreen.SCREEN_NAME, ECanvasType.ScreenCanvas, EPreviosScreenAct.Queue);
-            screen.SetData("herrlooooo");
+            //SettingScreen screen = ScreenHandler.ShowScreen<SettingScreen>(SettingScreen.SCREEN_NAME, ECanvasType.ScreenCanvas, EPreviosScreenAct.Queue);
+            //screen.SetData("herrlooooo");
         }
     }
 }

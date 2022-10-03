@@ -11,21 +11,8 @@ using UnityEngine;
 
 namespace Services.Core.UserInterface
 {
-    public class UIService :IUIService
+    public interface IScore
     {
-        public UIService(IUpdateTask updateTask)
-        {
-            updateTask.RegisterUpdateTask(ServiceUpdate);
-        }
-
-        public void Initialization(IVariableDatabase variableDatabase)
-        {
-            
-        }
-
-        private void ServiceUpdate()
-        {
-            //throw new NotImplementedException();
-        }
+        int Score { set; get; }
     }
 }

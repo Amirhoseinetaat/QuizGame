@@ -13,10 +13,7 @@ using GameWarriors.UIDomain.Abstraction;
 using GameWarriors.UIDomain.Core;
 using Managers.Core;
 using Services.Abstraction;
-using Services.Core.App;
-using Services.Core.Resource;
-using Services.Core.User;
-using Services.Core.UserInterface;
+using Services.Core.App; 
 using System;
 using UnityEngine;
 
@@ -54,12 +51,8 @@ namespace Managers
             serviceCollection.AddSingleton<IVariableDatabase, ResourceSystem>();
             serviceCollection.AddSingleton<IContentDatabase, ResourceSystem>();
             serviceCollection.AddSingleton<ISpriteDatabase, ResourceSystem>();
-
-            serviceCollection.AddSingleton<IUIService, UIService>();
-            serviceCollection.AddSingleton<IPlayerInventory, UserDataService>();
-            serviceCollection.AddSingleton<IResourceService, ResourceService>();
-            serviceCollection.AddSingleton<IAppService, AppService>();
-            serviceCollection.AddSingleton<CharacterManager>();
+            serviceCollection.AddSingleton<IPlaylist, JSONReaderService>();
+            serviceCollection.AddSingleton<IAppService, AppService>(); 
             StartCoroutine(serviceCollection.Build(Startup));
         }
 
