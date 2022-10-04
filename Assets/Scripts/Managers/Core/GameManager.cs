@@ -11,6 +11,7 @@ using GameWarriors.TaskDomain.Abstraction;
 using GameWarriors.TaskDomain.Core;
 using GameWarriors.UIDomain.Abstraction;
 using GameWarriors.UIDomain.Core;
+using Managers.Abstraction;
 using Managers.Core;
 using Services.Abstraction;
 using Services.Core.App; 
@@ -52,7 +53,8 @@ namespace Managers
             serviceCollection.AddSingleton<IContentDatabase, ResourceSystem>();
             serviceCollection.AddSingleton<ISpriteDatabase, ResourceSystem>();
             serviceCollection.AddSingleton<IPlaylist, JSONReaderService>();
-            serviceCollection.AddSingleton<IAppService, AppService>(); 
+            serviceCollection.AddSingleton<IAppService, AppService>();
+            serviceCollection.AddSingleton<IPlayAudio, AudioManager>();
             StartCoroutine(serviceCollection.Build(Startup));
         }
 

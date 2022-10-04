@@ -15,22 +15,14 @@ namespace UI.Screens
     {
         public const string SCREEN_NAME = "WelcomeScreen";
         public override string ScreenName => SCREEN_NAME;
-
-        //[SerializeField]
-        //private Button _settingButton;
-        //[SerializeField]
-        //private Text _coinCountLable; 
-
+         
         [SerializeField]
         private Text[] _playlistLabels;
         [SerializeField]
         private Button[] _playlistButtons;
         public override bool HasBlackScreen => false;
         public override bool CanCloseByBack => false;
-        public void SetData(string data)
-        {
-
-        }
+        
         public override void OnShow(Action onClose = null, bool showAnimation = true)
         {
             base.OnShow(onClose, showAnimation);
@@ -53,8 +45,9 @@ namespace UI.Screens
         }
         public void OnPlaylistButtonClick(int number)
         {
-              QuestionsScreen screen = ScreenHandler.ShowScreen<QuestionsScreen>(QuestionsScreen.SCREEN_NAME, ECanvasType.ScreenCanvas, EPreviosScreenAct.Queue);
-              screen.SetPlaylistID(number);
+            QuestionsScreen screen = ScreenHandler.ShowScreen<QuestionsScreen>(QuestionsScreen.SCREEN_NAME, ECanvasType.ScreenCanvas, EPreviosScreenAct.Queue);
+            screen.SetPlaylistID(number - 1);
+            screen.InitializeTheQuestions();
         }
     }
 }

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using Services.Data;
 using Services.Abstraction;
 using GameWarriors.DependencyInjection.Extensions;
+using GameWarriors.UIDomain.Abstraction;
 
 namespace UI.Screens
 {
@@ -24,43 +25,39 @@ namespace UI.Screens
         private Text[] _questionslistLabels;
         [SerializeField]
         private Button[] _questionsButtons;
-        private int _playlistID;
+        private int _playlistId;
         public override bool HasBlackScreen => false;
         public override bool CanCloseByBack => false;
-        public void SetData(string data)
-        {
-
-        }
+        
         public override void OnShow(Action onClose = null, bool showAnimation = true)
         {
-            base.OnShow(onClose, showAnimation);
+            base.OnShow(onClose, showAnimation); 
         }
         public override void Initialization()
         {
-            base.Initialization();
-
-            IPlaylist playlistInventory = ServiceProvider.GetService<IPlaylist>();
-            InitializeThePlayLists(playlistInventory.Playlists[_playlistID].questions);
+            base.Initialization(); 
         }
-        private void InitializeThePlayLists(List<Question> questions)
-        {
+        public void InitializeTheQuestions()
+        { 
+            IPlaylist playlistInventory = ServiceProvider.GetService<IPlaylist>();
+            List<Question> questions = playlistInventory.Playlists[_playlistId].questions;
             for (int i = 0; i < questions.Count; i++)
             {
                 _questionsButtons[i].gameObject.SetActive(true);
-                _questionslistLabels[i].text = "Question "+(i+1);
+                _questionslistLabels[i].text = "Question " + (i + 1);
                 _questionsButtons[i].onClick.AddListener(() => OnPlaylistButtonClick(i));
             }
         }
         public void OnPlaylistButtonClick(int number)
         {
-            // SettingScreen screen = ScreenHandler.ShowScreen<SettingScreen>(SettingScreen.SCREEN_NAME, ECanvasType.ScreenCanvas, EPreviosScreenAct.Queue);
-
-            // screen.SetData("herrlooooo");
+            QuizScreen screen = ScreenHandler.ShowScreen<QuizScreen>(QuizScreen.SCREEN_NAME, ECanvasType.ScreenCanvas, EPreviosScreenAct.Queue);
+            screen.SetData(0,_playlistId);
+            screen.InitializeTheQuize();
         }
 
         public void SetPlaylistID(int id)
         {
-            _playlistID = id;
+            _playlistId = id;
         }
     }
 }
