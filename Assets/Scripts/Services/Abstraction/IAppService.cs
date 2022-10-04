@@ -3,7 +3,8 @@ namespace Services.Abstraction
 {
     public interface IAppService
     {
-        int Score { set; get; }
+        int Score { get; }
+        int Wronganswers { get; }
         void CheckAnswer(bool answerIsRight);
     }
 }

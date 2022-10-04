@@ -7,5 +7,6 @@ namespace Managers.Abstraction
     public interface IPlayAudio
     {
         IEnumerator PlayAudioClip(string URL);
+        void StopPlayAudioClip();
     }
 }

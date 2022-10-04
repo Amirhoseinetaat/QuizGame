@@ -19,6 +19,8 @@ MonoBehaviour:
     _screenPrefab: {fileID: 8068132728171278707, guid: 27b20df5fa5a05b4bbb5b424a6dadff8, type: 3}
   - _screenKey: QuizScreen
     _screenPrefab: {fileID: 4314131377059214175, guid: d4f671bf0908bd94bb630ca7791652a2, type: 3}
+  - _screenKey: ResultShowScreen
+    _screenPrefab: {fileID: 3580313852280728917, guid: 2acf73f421f5d594ba40aaecffc5e9e7, type: 3}
   _mainCanvasPrefab: {fileID: 2071748494773216480, guid: ab5fcd5a32905ac41a45ea0efbc33352, type: 3}
   _screenCanvasPrefab: {fileID: 8164409239795565221, guid: 820422756c195ca42860e1fa03397b31, type: 3}
   _screenBlackPanelPrefab: {fileID: -4911458984060014917, guid: e9dbe733c154a824b8ed506fa7a020b7, type: 3}

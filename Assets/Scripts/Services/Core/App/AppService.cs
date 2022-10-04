@@ -5,20 +5,12 @@ namespace Services.Core.App
     public class AppService : IAppService
     {
         private int _score;
-        public int Score { 
-            get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-
+        private int _wronganswers;
+        public int Score { get => _score;} 
+        public int Wronganswers { get => _wronganswers; }
         public void CheckAnswer(bool answerIsRight)
         {
-            if (answerIsRight)
-            {
-                _score++;
-            }
-            else
-            {
-
-            }
-        }
-         
+            if (answerIsRight) _score++; else _wronganswers++; 
+        } 
     }
 }

@@ -50,8 +50,12 @@ namespace UI.Screens
         }
         public void OnPlaylistButtonClick(int number)
         {
+          
+        }
+        public void OnStartButtonClicked()
+        {
             QuizScreen screen = ScreenHandler.ShowScreen<QuizScreen>(QuizScreen.SCREEN_NAME, ECanvasType.ScreenCanvas, EPreviosScreenAct.Queue);
-            screen.SetData(0,_playlistId);
+            screen.SetData(0, _playlistId);
             screen.InitializeTheQuize();
         }
 

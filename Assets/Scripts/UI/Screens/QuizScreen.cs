@@ -55,11 +55,11 @@ namespace UI.Screens
             _correctAnswer = playlistInventory.Playlists[_playlistID].questions[_questionID].choices[answerIndex].title;
             _playsongURL = playlistInventory.Playlists[_playlistID].questions[_questionID].song.sample;
             _pictureURL = playlistInventory.Playlists[_playlistID].questions[_questionID].song.picture;
-            _totalQuizes = playlistInventory.Playlists[_playlistID].questions.Count;
+            _totalQuizes = playlistInventory.Playlists[_playlistID].questions.Count-1;
             IPlayAudio playAudio = ServiceProvider.GetService<IPlayAudio>();
             StartCoroutine(playAudio.PlayAudioClip(_playsongURL));
             _answerToggle.SetAllTogglesOff();
-
+            _quizLabel.text = " Quize " + (_questionID + 1).ToString();
             for (int i = 0; i < _choiceLabels.Length; i++)
                 _choiceLabels[i].text = choices[i].title;
         }
@@ -79,9 +79,9 @@ namespace UI.Screens
                 StartCoroutine(DisplayAnswerResult("Your Answer Was Wrong!", Color.red));
             }
 
-            if (_totalQuizes < _questionID)
+            if (_totalQuizes <= _questionID)
             {
-
+                ResultShowScreen screen = ScreenHandler.ShowScreen<ResultShowScreen>(ResultShowScreen.SCREEN_NAME, ECanvasType.ScreenCanvas, EPreviosScreenAct.Queue);
             }
             else
             {

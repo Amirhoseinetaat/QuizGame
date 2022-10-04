@@ -39,14 +39,13 @@ namespace UI.Screens
             for (int i = 0; i < playlists.Count; i++)
             {
                 _playlistButtons[i].gameObject.SetActive(true);
-                _playlistLabels[i].text = playlists[i].playlist;
-                _playlistButtons[i].onClick.AddListener(() => OnPlaylistButtonClick(i));
+                _playlistLabels[i].text = playlists[i].playlist;  
             }
         }
         public void OnPlaylistButtonClick(int number)
         {
             QuestionsScreen screen = ScreenHandler.ShowScreen<QuestionsScreen>(QuestionsScreen.SCREEN_NAME, ECanvasType.ScreenCanvas, EPreviosScreenAct.Queue);
-            screen.SetPlaylistID(number - 1);
+            screen.SetPlaylistID(number);
             screen.InitializeTheQuestions();
         }
     }

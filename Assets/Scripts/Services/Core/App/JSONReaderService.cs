@@ -21,9 +21,7 @@ namespace Services.Core.App
 
         public void Initialization()
         {
-            JsonToObject();
-            Debug.Log("Iniiiiit  " + _playlists.Count);
-
+            JsonToObject();  
         }
 
 

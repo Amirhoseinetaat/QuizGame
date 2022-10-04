@@ -21,6 +21,9 @@ namespace Managers
             audioSource.clip = www.GetAudioClip(false, false);
             audioSource.Play();
         }
-         
+        public void StopPlayAudioClip()
+        { 
+            audioSource.Stop();
+        }
     }
 }
