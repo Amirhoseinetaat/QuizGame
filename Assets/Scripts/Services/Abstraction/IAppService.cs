@@ -6,5 +6,6 @@ namespace Services.Abstraction
         int Score { get; }
         int Wronganswers { get; }
         void CheckAnswer(bool answerIsRight);
+        void ResetData();
     }
 }

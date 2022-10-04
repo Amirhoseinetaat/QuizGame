@@ -43,6 +43,8 @@ namespace UI.Screens
         public void OnNextButtonClicked()
         {
             WelcomeScreen screen = ScreenHandler.ShowScreen<WelcomeScreen>(WelcomeScreen.SCREEN_NAME, ECanvasType.ScreenCanvas, EPreviosScreenAct.Queue);
+            IAppService appService = ServiceProvider.GetService<IAppService>();
+            appService.ResetData();
         }
 
     }
